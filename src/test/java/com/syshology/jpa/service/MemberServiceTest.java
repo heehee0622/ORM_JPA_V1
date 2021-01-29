@@ -42,4 +42,9 @@ public class MemberServiceTest {
         Assert.fail("예외가 발생해야 한다.");
     }
 
+    @Test
+    public void 모두조회(){
+        memberRepository.findOne(1L);
+    }
+
 }

@@ -93,4 +93,8 @@ public class OrderServiceTest {
         entityManager.persist(book);
         return book;
     }
+    @Test
+    public void 모두조회(){
+        orderRepository.findOne(1L);// ONE TO MANY EAGER 전략 으로 조회시 N+1
+    }
 }

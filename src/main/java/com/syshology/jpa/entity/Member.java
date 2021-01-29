@@ -20,7 +20,7 @@ public class Member {
     private String name;
     @Embedded
     private Address address;
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", fetch = FetchType.EAGER)
     private List<Order> orders = new ArrayList<>();
 
 
