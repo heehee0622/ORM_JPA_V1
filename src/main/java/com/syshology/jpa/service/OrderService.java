@@ -72,6 +72,21 @@ public class OrderService {
      * 주문 검색
      */
     public List<Order> findOrders(OrderSearch orderSearch) {
-        return orderRepository.findAll(orderSearch);
+        List<Order> orders = orderRepository.findAll(orderSearch);
+       /*
+         open in view를 위한 테스트 코드
+        */
+        for (Order order : orders) {
+            List<OrderItem> orderItems = order.getOrderItems();
+            for (OrderItem orderItem : orderItems) {
+                orderItem.getCount();
+                orderItem.getItem().getName();
+                List<Category> categories = orderItem.getItem().getCategories();
+                for (Category category : categories) {
+                   category.getName();
+                }
+            }
+        }
+        return orders;
     }
 }

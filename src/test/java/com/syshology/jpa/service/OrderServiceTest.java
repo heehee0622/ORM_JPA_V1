@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
+import java.util.Optional;
 
 /**
  * Created by s.h.kim.
@@ -97,4 +98,5 @@ public class OrderServiceTest {
     public void 모두조회(){
         orderRepository.findOne(1L);// ONE TO MANY EAGER 전략 으로 조회시 N+1
     }
+
 }

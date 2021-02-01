@@ -36,6 +36,9 @@ public class MemberRepository {
         return entityManager.createQuery("select m from Member m where m.name = :name", Member.class)
                 .setParameter("name", name).getResultList();
     }
+    public List<Member> findOneWithJpql(String name) {
+        return entityManager.createQuery("select  m from Member m where m.name= :name", Member.class).setParameter("name", name).getResultList();
 
+    }
 
 }
